@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Docket — To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="sheet">
+
+    <header class="sheet__header">
+      <h1 class="sheet__title">The Docket</h1>
+      <p class="sheet__subtitle">Today's tasks, kept in one place.</p>
+    </header>
+
+    <section class="composer">
+      <form id="task-form" class="composer__form" novalidate>
+        <div class="composer__field">
+          <input
+            type="text"
+            id="task-input"
+            class="composer__input"
+            placeholder="Add a task..."
+            autocomplete="off"
+            aria-label="New task"
+            aria-describedby="task-error"
+          />
+          <p id="task-error" class="composer__error" role="alert" aria-live="polite"></p>
+        </div>
+        <button type="submit" class="composer__submit">Add task</button>
+      </form>
+    </section>
+
+    <section class="board">
+      <div class="board__meta">
+        <div class="board__stats" id="task-stats" aria-live="polite">No tasks yet</div>
+        <button type="button" id="delete-all-btn" class="board__clear" disabled>
+          <span class="board__clear-label">Delete all</span>
+        </button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <p id="empty-state" class="empty-state">
+        Nothing on the docket. Add your first task above.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
